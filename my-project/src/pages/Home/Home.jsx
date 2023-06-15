@@ -40,6 +40,11 @@ width: 100%;
 display: flex;
 align-items: baseline;
 justify-content: space-evenly;
+@media only screen and (max-width: 768px) {
+  display: flex;
+  flex-direction: column;
+  
+  }
 
 `;
 
@@ -64,6 +69,8 @@ const PhotoContainer = styled.div`
   margin: 10px;
   overflow: hidden;
   cursor: pointer;
+
+
 `;
 
 const PhotoImage = styled.img`
@@ -76,6 +83,12 @@ const PhotoImage = styled.img`
     transform: scale(1.1);
    
   }
+  @media only screen and (max-width: 768px) {
+    width: 300px;
+  height: 300px;
+  }
+
+  
 `;
 
 const PhotoOverlay = styled.div`
@@ -115,24 +128,24 @@ const PhotoProtection = styled.div`
 
 
 const Intro = styled.div`
-
+height: 100px;
 
 
   align-items: center;
   text-align: center;
   justify-content: center;
 
-
+gap: 20px;
 
 
   h1{
-  font-size: 1.5rem;
+  font-size: 2.7rem;
    
     text-align: center;
   
-    font-weight: 400;
+    font-weight: 300;
     font-style: normal;
-    font-size: 25px;
+
     color: #000000 !important;
     line-height: 40px;
 
@@ -144,25 +157,24 @@ const Intro = styled.div`
     }
     
   @media only screen and (max-width: 768px) {
-    font-size: 60px;
+    font-size: 40px;
+  
   }
 }
 
-span{
+p{
   
-   
+margin-top: 25px;
     font-style: normal;
     font-size: 25px;
     color: #000000 !important;
     line-height: 40px;
     font-weight: bold;
-
-    @font-face {
-    font-family: 'Playfair Display Regular';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Playfair Display Regular'), url('PlayfairDisplay-Regular.woff') format('woff');
-    }
+    @media only screen and (max-width: 768px) {
+    font-size: 11px;
+  
+  }
+    
     
 }
 
@@ -185,7 +197,7 @@ const Home = () => {
 
 <Intro>
   <h1>Representação arquitetônica por Bruno Mota</h1>
-  <span>Render | Isométricas | Diagramas | Representação</span>
+  <p>Render | Isométricas | Diagramas | Representação</p>
 </Intro>
 
 <Work>
