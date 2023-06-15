@@ -27,7 +27,7 @@ const Left = styled.div`
    
 
     width: 100%;
-    height: 200%;
+    height: 150%;
     border-radius: 10px;
 
 
@@ -95,19 +95,19 @@ const Button = styled.button`
     text-transform: uppercase;
     transition: all .3s ease;
     
-  
+   :hover {
+    color: white;
+    background-color: #6231cd  ;
+    box-shadow: rgb(100 100 111 / 50%) 0 7px 29px 0;
+    
+  }
 
   @media (min-width: 320px){
     padding: 12px 24px;
     justify-content: center;
 }
 
-  :hover {
-    color: white;
-    background-color: #6231cd  ;
-    box-shadow: rgb(100 100 111 / 50%) 0 7px 29px 0;
-    
-  }
+ 
 `;
 
 const Contato = () => {
