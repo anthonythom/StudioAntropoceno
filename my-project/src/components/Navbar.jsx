@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
@@ -10,7 +10,8 @@ const Section = styled.div`
 const Container = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  padding: 10px;
 `;
 
 const Links = styled.div`
@@ -18,6 +19,7 @@ const Links = styled.div`
 
   cursor: pointer;
 `;
+
 
 const Social = styled.div`
   display: flex;
@@ -32,15 +34,24 @@ const Logo = styled.img`
   height: 30px;
 
   cursor: pointer;
-  margin-left: 100px;
+
+
+ 
 `;
 
 const List = styled.ul`
   display: flex;
   gap: 30px;
   margin-right: 100px;
-  @media only screen and (max-width: 768px) {
-    display: none;
+
+  list-style: none;
+  @media (max-width: 768px) {
+    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+    flex-direction: column;
+   align-items: center;
+    width: 100%;
+    margin-top: 10px;
+ 
   }
 `;
 
@@ -69,17 +80,41 @@ const ListItem = styled.li`
   }
 `;
 
+const MenuButton = styled.button`
+  display: none;
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+`;
+
+
 const Navbar = () => {
+
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleMenuToggle = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <Section>
       <Container>
+
         <Link to="/">
           <Logo src="./img/logo.png" />
         </Link>
 
+        <MenuButton onClick={handleMenuToggle}>
+          
+          
+          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+</svg></MenuButton>
+
         <Links>
-          <List to="/">
-            <Link class="nav-link" href="./#home">
+          <List isOpen={isOpen}>
+            <Link to="/">
               <ListItem>Início</ListItem>
             </Link>
 

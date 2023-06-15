@@ -17,6 +17,11 @@ text-align: center;
 align-items: center;
 justify-content: space-evenly;
 
+
+@media (max-width: 768px) {
+  flex-direction: column;
+
+  }
 `;
 
 
@@ -96,7 +101,7 @@ const Right= styled.h1`
 
 const Description = styled.p`
   font-size: 1.4rem;
-  text-align: center;
+  text-align: justify;
   max-width: 800px;
   margin-bottom: 2rem;
 
@@ -109,14 +114,18 @@ const Description = styled.p`
   padding-bottom: 20px;
 
 
+  @media (max-width: 768px) {
+  
+    width: 90%;
+    margin: auto;
+  font-size: 15px;
+
+  text-align: center;
 
 
-  @font-face {
-    font-family: 'Raleway Thin';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Raleway Thin'), url('Raleway Thin.woff') format('woff');
-    }
+
+  }
+
 `;
 
 const Name = styled.h1`
@@ -168,7 +177,7 @@ const Sobre = () => {
     <PhotoOverlay> </PhotoOverlay>
 <PhotoProtection></PhotoProtection>
 
-      <Name>Bruno Mota</Name>
+      <Name>Bruno Ferreira Mota</Name>
 
       </PhotoContainer>
 

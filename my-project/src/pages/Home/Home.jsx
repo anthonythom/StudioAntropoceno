@@ -116,7 +116,7 @@ const PhotoProtection = styled.div`
 
 const Intro = styled.div`
 
-width: 100%;
+
 
   align-items: center;
   text-align: center;
