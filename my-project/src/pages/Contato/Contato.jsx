@@ -79,35 +79,36 @@ const TextArea = styled.textarea`
 `;
 
 const Button = styled.button`
-    width: 100%;
-    height: 100%;
+ 
+    height: 50px;
     cursor: pointer;
-    font-size: 12px;
-    font-weight: 800;
+    font-size: 14px;
+    font-weight: 700;
     line-height: 19px;
     text-align: center;
     border: 1px;
     border-style: solid;
     border-radius: 15px;
     border-color:#000000 ;
-    color:  #000003;
+    color:  #e1e1e6;
     background: var(--background);
     text-transform: uppercase;
     transition: all .3s ease;
-    
-   :hover {
-    color: white;
-    background-color: #6231cd  ;
-    box-shadow: rgb(100 100 111 / 50%) 0 7px 29px 0;
-    
-  }
+ 
 
   @media (min-width: 320px){
     padding: 12px 24px;
     justify-content: center;
+
+
 }
 
- 
+&:hover {
+    color: white;
+    background-color: #6231cd  ;
+    box-shadow: rgb(100 100 111 / 50%) 0 7px 29px 0;
+  }
+  
 `;
 
 const Contato = () => {

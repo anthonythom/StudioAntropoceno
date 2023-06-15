@@ -52,7 +52,7 @@ const List = styled.ul`
    align-items: center;
     width: 100%;
     margin-top: 10px;
- 
+    text-transform: none;
   }
 `;
 
@@ -73,12 +73,7 @@ const ListItem = styled.li`
   text-transform: none;
   letter-spacing: 0;
   color: #6b6969;
-  @font-face {
-    font-family: "Raleway Thin";
-    font-style: normal;
-    font-weight: normal;
-    src: local("Raleway Thin"), url("Raleway Thin.woff") format("woff");
-  }
+
 `;
 
 const MenuButton = styled.button`
