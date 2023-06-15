@@ -24,10 +24,13 @@ const Left = styled.div`
   margin: 5rem auto 0 auto;
 
   @media (max-width: 768px) {
+   
+
     width: 100%;
-    height: 120%;
+    height: 200%;
     border-radius: 10px;
-    margin: 5rem auto 0 auto;
+
+
   }
 `;
 
@@ -58,47 +61,52 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  padding: 20px;
+  padding: 15px;
   background-color: #ececf3;
-  border: none;
-  border-radius: 5px;
+
+  border-radius: 15px;
   color: #000000;
+
 `;
 
 const TextArea = styled.textarea`
   padding: 20px;
-  border: none;
-  border-radius: 5px;
+
+  border-radius: 15px;
   color: #000000;
   background-color: #ececf3;
+
 `;
 
 const Button = styled.button`
-  width: 100%;
-  height: 55px;
-  cursor: pointer;
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 19px;
-  text-align: center;
-  border: 1px;
-  border-style: solid;
-  border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 19px;
+    text-align: center;
+    border: 1px;
+    border-style: solid;
+    border-radius: 15px;
+    border-color:#000000 ;
+    color:  #000003;
+    background: var(--background);
+    text-transform: uppercase;
+    transition: all .3s ease;
+    
+  
 
-  color: #000000;
-  background-color: #ececf3;
-  text-transform: uppercase;
-  transition: all 0.3s ease;
-
-  @media (min-width: 320px) {
+  @media (min-width: 320px){
     padding: 12px 24px;
     justify-content: center;
-  }
+}
 
   :hover {
     color: white;
-    background-color: #c04141;
+    background-color: #6231cd  ;
     box-shadow: rgb(100 100 111 / 50%) 0 7px 29px 0;
+    
   }
 `;
 
@@ -155,7 +163,7 @@ const Contato = () => {
             <TextArea
               placeholder="Escreva sua mensagem:"
               name="message"
-              rows={10}
+              rows={7}
             />
             <Button type="submit">Enviar</Button>
             {success &&

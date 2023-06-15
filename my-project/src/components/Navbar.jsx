@@ -47,6 +47,7 @@ const List = styled.ul`
   list-style: none;
   @media (max-width: 768px) {
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+
     flex-direction: column;
    align-items: center;
     width: 100%;
