@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 const Section = styled.div`
-  width: 95%;
+  width: 100%;
   margin-top: 50px;
 `;
 
@@ -12,6 +12,8 @@ const Container = styled.div`
   align-items: center;
   justify-content: space-around;
   padding: 10px;
+  
+
 `;
 
 const Links = styled.div`
@@ -53,15 +55,25 @@ const List = styled.ul`
     width: 100%;
     margin-top: 10px;
     text-transform: none;
+
+
+
   }
 `;
 
 const ListSocial = styled.ul`
   display: flex;
-
+ 
   gap: 10px;
   @media only screen and (max-width: 768px) {
-    display: none;
+   
+    
+    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
+
+ 
+  width: auto;
+
+
   }
 `;
 

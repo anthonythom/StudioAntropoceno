@@ -10,6 +10,10 @@ import Contato from './pages/Contato/Contato.jsx'
 import Sobre from './pages/Sobre/Sobre.jsx'
 import Trabalhos from './pages/Trabalhos/Trabalhos.jsx'
 import Errorpage from './pages/Errorpage.jsx'
+import TrabalhosT from './pages/Trabalhos/Trabalhos3.jsx'
+import Trabalhos2 from './pages/Trabalhos/Trabalhos2.jsx'
+import Trabalhos1 from './pages/Trabalhos/Trabalhos1.jsx'
+import Trabalhos3 from './pages/Trabalhos/Trabalhos3.jsx'
 
 const router = createBrowserRouter([
   {
@@ -29,9 +33,26 @@ const router = createBrowserRouter([
       path: '/contato',
       element: <Contato/>
       },
+
+      // rotas da pagina de trabalhos
        {
       path: '/trabalhos',
-      element: <Trabalhos/>
+      element: <Trabalhos />
+      }
+      ,
+       {
+      path: '/trabalhos1',
+      element: <Trabalhos1 />
+      }
+      ,
+       {
+      path: '/trabalhos2',
+      element: <Trabalhos2 />
+      }
+      ,
+       {
+      path: '/trabalhos3',
+      element: <Trabalhos3 />
       }
     ],
   },
