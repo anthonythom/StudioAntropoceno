@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
 
-
-import { Outlet } from "react-router-dom";
+import Sobre from "./pages/Sobre/Sobre";
+import Contato from "./pages/Contato/Contato";
+import Home from "./pages/Home/Home";
 import Navbar from "./components/Navbar";
-
+import Rodape from "./components/Rodape";
+import Trabalhos from "./pages/Trabalhos/Trabalhos";
+import BtnVoltar from "./components/BtnVoltar"
 
 const Container = styled.div`
   height: 100vh;
@@ -21,15 +24,16 @@ const Container = styled.div`
   }
 `;
 
-
-
-
-
 function App() {
   return (
     <Container>
-     <Navbar />
-     <Outlet />
+      <Navbar  />
+      <Home id="/"  />
+      <Sobre id="sobre" />
+      <Trabalhos id="trabalhos"/>
+      <Contato id="contato"/>
+      <Rodape />
+      <BtnVoltar/>
     </Container>
   );
 }

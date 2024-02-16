@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-
 const Section = styled.div``;
 
 const Container = styled.div`
@@ -85,11 +84,9 @@ const Left = styled.div`
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-
 `;
 
 const Middle = styled.div`
-
   display: flex;
   justify-content: space-around;
   flex-direction: column;
@@ -100,7 +97,6 @@ const Right = styled.div`
   display: flex;
   justify-content: space-around;
   flex-direction: column;
-
 `;
 
 const Name = styled.h1`
@@ -118,28 +114,9 @@ const Name = styled.h1`
   padding-bottom: 20px;
 `;
 
-const Button= styled.div`
-display: flex;
-position: absolute;
-color: black;
-background-color: #ffffff;
-
-margin-left: 95%;
-margin-top: 70vh;
-@media (max-width: 768px) {
- 
-position: absolute;
-margin-left: 45%;
-top: 220px;
-background-color: transparent;
-  }
-`;
-
-
 
 
 const Trabalhos = () => {
-
   const [showName, setShowName] = useState(false);
   const handleMouseEnter = () => {
     setShowName(true);
@@ -149,12 +126,9 @@ const Trabalhos = () => {
   };
 
   return (
-    <Section id="trabalhos">
+    <Section id="trabalhos" className="header_link">
       <Container>
         <Left>
-
-       
-
           <div>
             <Link to="/trabalhos1">
               <PhotoContainer
@@ -206,7 +180,6 @@ const Trabalhos = () => {
           </div>
 
           <div>
-            
             <Link to="/trabalhos2">
               <PhotoContainer
                 onMouseEnter={handleMouseEnter}
@@ -256,12 +229,9 @@ const Trabalhos = () => {
             </Link>
           </div>
         </Right>
-        
-        <Button class="back-to-top" data-hover-hint="backToTop">
-                <a class="nav-link" href="./trabalhos"><span class="arrow">&uarr;</span><span class="preserve-whitespace"> Voltar</span></a>
-              </Button>
-      </Container>
+
       
+      </Container>
     </Section>
   );
 };

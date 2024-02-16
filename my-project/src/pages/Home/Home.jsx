@@ -1,97 +1,58 @@
-import React from 'react'
+import React from "react";
 import styled from "styled-components";
-import Navbar from '../../components/Navbar';
-
-
-
-
-
-const Section = styled.div`
-
-  
-
-
-
-  
-`;
+import Navbar from "../../components/Navbar";
+import Sobre from "../Sobre/Sobre"
+const Section = styled.div``;
 
 const Container = styled.div`
+  margin-top: 150px;
 
-
-
-
-
-
-
-margin-top: 150px;
-
-
-
-  color:  #000000;
-
-
-
+  color: #000000;
 `;
-
-
 
 const Work = styled.div`
-width: 100%;
-display: flex;
-align-items: baseline;
-justify-content: space-evenly;
-@media only screen and (max-width: 768px) {
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  margin: auto;
-  align-items: center;
-  justify-content: center;
-  
+  align-items: baseline;
+  justify-content: space-evenly;
+  @media only screen and (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    align-items: center;
+    justify-content: center;
   }
-
 `;
-
-
 
 const Container1 = styled.div`
- display: block;
+  display: block;
 
-
-
- margin-top: 212px;
-
-  
+  margin-top: 212px;
 `;
-
-
-
-
 
 const PhotoContainer = styled.div`
   position: relative;
   margin: 10px;
   overflow: hidden;
   cursor: pointer;
-
-
+  border-radius: 50px;
+  margin-bottom: 100px;
 `;
 
 const PhotoImage = styled.img`
   width: 500px;
   height: 500px;
   object-fit: cover;
+  border-radius: 50px;
   transition: transform 0.3s ease;
 
   ${PhotoContainer}:hover & {
     transform: scale(1.1);
-   
   }
   @media only screen and (max-width: 768px) {
     width: 300px;
-  height: 300px;
+    height: 300px;
   }
-
-  
 `;
 
 const PhotoOverlay = styled.div`
@@ -126,26 +87,20 @@ const PhotoProtection = styled.div`
   }
 `;
 
-
-
-
-
 const Intro = styled.div`
-height: 100px;
-
+  height: 100px;
 
   align-items: center;
   text-align: center;
   justify-content: center;
 
-gap: 20px;
+  gap: 20px;
 
+  h1 {
+    font-size: 2.7rem;
 
-  h1{
-  font-size: 2.7rem;
-   
     text-align: center;
-  
+
     font-weight: 300;
     font-style: normal;
 
@@ -153,118 +108,106 @@ gap: 20px;
     line-height: 40px;
 
     @font-face {
-    font-family: 'Raleway Thin';
-    font-style: normal;
-    font-weight: normal;
-    src: local('Raleway Thin'), url('Raleway Thin.woff') format('woff');
+      font-family: "Raleway Thin";
+      font-style: normal;
+      font-weight: normal;
+      src: local("Raleway Thin"), url("Raleway Thin.woff") format("woff");
     }
-    
-  @media only screen and (max-width: 768px) {
-    font-size: 40px;
-  
-  }
-}
 
-p{
-  
-margin-top: 25px;
+    @media only screen and (max-width: 768px) {
+      font-size: 40px;
+    }
+  }
+
+  p {
+    margin-top: 25px;
     font-style: normal;
     font-size: 25px;
     color: #000000 !important;
     line-height: 40px;
     font-weight: bold;
     @media only screen and (max-width: 768px) {
-    font-size: 11px;
-  
+      font-size: 11px;
+    }
   }
-    
-    
-}
-
-
 `;
-
-
-
-
-
-
-
 
 const Home = () => {
   return (
-   <Section id="home" className="header_link">
-   
-    <Container>
+    <Section id="inicio" className="header_link">
+
+      <Container>
+        <Intro>
+          <h1>Representação arquitetônica por Bruno Mota</h1>
+          <p>Render | Isométricas | Diagramas | Representação</p>
+        </Intro>
+
+        <Work>
+          <Container1>
+            <div className="fileira1">
+              <PhotoContainer>
+                <PhotoImage
+                  src="./img/foto1.jpeg"
+                  alt="Foto 1"
+                  width={500}
+                  height={500}
+                />
+                <PhotoOverlay></PhotoOverlay>
+                <PhotoProtection></PhotoProtection>
+              </PhotoContainer>
+
+              <PhotoContainer>
+                <PhotoImage
+                  src="./img/test1.png"
+                  alt="Foto 1"
+                  width={400}
+                  height={400}
+                />
+                <PhotoOverlay></PhotoOverlay>
+                <PhotoProtection></PhotoProtection>
+              </PhotoContainer>
+            </div>
+          </Container1>
+
+          <div className="fileira2">
+            <PhotoContainer>
+              <PhotoImage src="./img/foto2.jpeg" alt="Foto 1" />
+              <PhotoOverlay></PhotoOverlay>
+              <PhotoProtection></PhotoProtection>
+            </PhotoContainer>
+            <PhotoContainer>
+              <PhotoImage src="./img/test2.png" alt="Foto 2" />
+              <PhotoOverlay></PhotoOverlay>
+              <PhotoProtection></PhotoProtection>
+            </PhotoContainer>
+          </div>
+
+          <div className="fileira3">
+            <PhotoContainer>
+              <PhotoImage src="./img/foto3.jpeg" alt="Foto 1" />
+              <PhotoOverlay></PhotoOverlay>
+              <PhotoProtection></PhotoProtection>
+            </PhotoContainer>
+            <PhotoContainer>
+              <PhotoImage src="./img/test3.png" alt="Foto 3" />
+              <PhotoOverlay></PhotoOverlay>
+              <PhotoProtection></PhotoProtection>
+            </PhotoContainer>
+          </div>
+        </Work>
+        
+      </Container>
 
 
-<Intro>
-  <h1>Representação arquitetônica por Bruno Mota</h1>
-  <p>Render | Isométricas | Diagramas | Representação</p>
-</Intro>
+      <Container>
 
-<Work>
+     
 
-
-<Container1>
-<div className='fileira1'>
-
-<PhotoContainer>
-          <PhotoImage src="./img/foto1.jpeg" alt="Foto 1" width={500}  height={500}/>
-          <PhotoOverlay></PhotoOverlay>
-          <PhotoProtection></PhotoProtection>
-         
-        </PhotoContainer>
-
-        <PhotoContainer>
-          <PhotoImage src="./img/test1.png" alt="Foto 1" width={400}  height={400} />
-          <PhotoOverlay></PhotoOverlay>
-          <PhotoProtection></PhotoProtection>
-        </PhotoContainer>
-</div>
-</Container1>
-
-
-
-
-
-<div className='fileira2'>
-<PhotoContainer>
-          <PhotoImage src="./img/foto2.jpeg" alt="Foto 1" />
-          <PhotoOverlay></PhotoOverlay>
-          <PhotoProtection></PhotoProtection>
-        </PhotoContainer>
-<PhotoContainer>
-          <PhotoImage src="./img/test2.png" alt="Foto 2" />
-          <PhotoOverlay></PhotoOverlay>
-          <PhotoProtection></PhotoProtection>
-        </PhotoContainer>
-
-</div>
-
-<div className='fileira3'>
-<PhotoContainer>
-          <PhotoImage src="./img/foto3.jpeg" alt="Foto 1" />
-          <PhotoOverlay></PhotoOverlay>
-          <PhotoProtection></PhotoProtection>
-        </PhotoContainer>
-<PhotoContainer>
-          <PhotoImage src="./img/test3.png" alt="Foto 3" />
-          <PhotoOverlay></PhotoOverlay>
-          <PhotoProtection></PhotoProtection>
-        </PhotoContainer>
-
-</div>
-
-
-
-
-
-</Work>
-
-    </Container>
-   </Section>
-  )
-}
+      </Container>
+      
+    </Section>
+    
+  );
+};
 
 export default Home;

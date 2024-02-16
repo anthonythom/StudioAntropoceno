@@ -4,16 +4,18 @@ import { Link } from "react-router-dom";
 
 const Section = styled.div`
   width: 100%;
-  margin-top: 50px;
 `;
 
 const Container = styled.div`
   display: flex;
   align-items: center;
+  width: 100%;
+  height: 100px;
   justify-content: space-around;
   padding: 10px;
-  
-
+  position: fixed;
+  z-index: 1;
+  background-color: #ffffff;
 `;
 
 const Links = styled.div`
@@ -21,7 +23,6 @@ const Links = styled.div`
 
   cursor: pointer;
 `;
-
 
 const Social = styled.div`
   display: flex;
@@ -36,9 +37,6 @@ const Logo = styled.img`
   height: 30px;
 
   cursor: pointer;
-
-
- 
 `;
 
 const List = styled.ul`
@@ -51,29 +49,21 @@ const List = styled.ul`
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
 
     flex-direction: column;
-   align-items: center;
+    align-items: center;
     width: 100%;
     margin-top: 10px;
     text-transform: none;
-
-
-
   }
 `;
 
 const ListSocial = styled.ul`
   display: flex;
- 
+
   gap: 10px;
   @media only screen and (max-width: 768px) {
-   
-    
     display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
 
- 
-  width: auto;
-
-
+    width: auto;
   }
 `;
 
@@ -85,7 +75,6 @@ const ListItem = styled.li`
   text-transform: none;
   letter-spacing: 0;
   color: #6b6969;
-
 `;
 
 const MenuButton = styled.button`
@@ -96,9 +85,7 @@ const MenuButton = styled.button`
   }
 `;
 
-
 const Navbar = () => {
-
   const [isOpen, setIsOpen] = useState(false);
 
   const handleMenuToggle = () => {
@@ -108,33 +95,42 @@ const Navbar = () => {
   return (
     <Section>
       <Container>
-
         <Link to="/">
           <Logo src="./img/logo.png" />
         </Link>
 
         <MenuButton onClick={handleMenuToggle}>
-          
-          
-          <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
-  <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
-</svg></MenuButton>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="40"
+            height="40"
+            fill="currentColor"
+            class="bi bi-list"
+            viewBox="0 0 16 16"
+          >
+            <path
+              fill-rule="evenodd"
+              d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"
+            />
+          </svg>
+        </MenuButton>
 
         <Links>
           <List isOpen={isOpen}>
-            <Link to="/">
+            <a class="nav-link" href="./#inicio">
               <ListItem>Início</ListItem>
-            </Link>
+            </a>
 
-            <Link to="/sobre">
+            <a class="nav-link" href="./#sobre">
               <ListItem>Sobre</ListItem>
-            </Link>
-            <Link to="/trabalhos">
+            </a>
+
+            <a class="nav-link" href="./#trabalhos">
               <ListItem>Trabalhos</ListItem>
-            </Link>
-            <Link to="/contato">
+            </a>
+            <a class="nav-link" href="./#contato">
               <ListItem>Contato</ListItem>
-            </Link>
+            </a>
           </List>
         </Links>
 

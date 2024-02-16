@@ -137,7 +137,7 @@ const Contato = () => {
       );
   };
   return (
-    <Section id="contact" className="header_link">
+    <Section id="contato" className="header_link">
       <Container>
         <Left>
           <Form ref={ref} onSubmit={handleSubmit}>
