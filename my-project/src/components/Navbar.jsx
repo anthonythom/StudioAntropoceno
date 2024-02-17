@@ -81,7 +81,7 @@ const Navbar = () => {
     <Section>
       <Container>
         <a class="nav-link" href="./#inicio">
-          <Logo src="./public/img/bg-home.svg" />
+          <Logo src="./img/bg-home.svg" />
         </a>
 
         <MenuButton onClick={handleMenuToggle}>
