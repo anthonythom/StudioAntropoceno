@@ -91,7 +91,7 @@ const PhotoProtection = styled.div`
 `;
 
 const Intro = styled.div`
-background-image: url('./public/img/bg-home.png');
+background-image: url('../public/img/bg-home.png');
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -136,7 +136,7 @@ const Home = () => {
 
       <Container>
         <Intro>
-        <Logo src="./public/img/bg-home.svg" />
+        <Logo src="../public/img/bg-home.svg"/>
           <p>visualização arquitetônica</p>
         </Intro>
 
