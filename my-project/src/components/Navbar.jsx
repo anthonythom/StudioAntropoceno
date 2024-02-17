@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
+import "../pages/Home/Home.css";
 const Section = styled.div`
   width: 100%;
 `;
@@ -11,11 +11,10 @@ const Container = styled.div`
   align-items: center;
   width: 100%;
   height: 100px;
-  justify-content: space-around;
-  padding: 10px;
+  justify-content: space-between;
+  padding: 50px;
   position: fixed;
   z-index: 1;
-  background-color: #ffffff;
 `;
 
 const Links = styled.div`
@@ -24,17 +23,10 @@ const Links = styled.div`
   cursor: pointer;
 `;
 
-const Social = styled.div`
-  display: flex;
 
-  color: #000000;
-  font-size: 16px;
-
-  cursor: pointer;
-`;
 
 const Logo = styled.img`
-  height: 30px;
+  height: 50px;
 
   cursor: pointer;
 `;
@@ -42,7 +34,7 @@ const Logo = styled.img`
 const List = styled.ul`
   display: flex;
   gap: 30px;
-  margin-right: 100px;
+  
 
   list-style: none;
   @media (max-width: 768px) {
@@ -51,30 +43,23 @@ const List = styled.ul`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 250px;
     text-transform: none;
   }
 `;
 
-const ListSocial = styled.ul`
-  display: flex;
 
-  gap: 10px;
-  @media only screen and (max-width: 768px) {
-    display: ${({ isOpen }) => (isOpen ? "flex" : "none")};
-
-    width: auto;
-  }
-`;
 
 const ListItem = styled.li`
   font-size: 20px;
 
-  font-weight: 400;
+  font-family: "Poppins", sans-serif;
+  font-weight: 100;
   font-style: normal;
-  text-transform: none;
-  letter-spacing: 0;
-  color: #6b6969;
+  font-size: 35px;
+
+  color: #d1c4c0;
+  text-transform: lowercase;
 `;
 
 const MenuButton = styled.button`
@@ -95,9 +80,9 @@ const Navbar = () => {
   return (
     <Section>
       <Container>
-        <Link to="/">
-          <Logo src="./img/logo.png" />
-        </Link>
+        <a class="nav-link" href="./#inicio">
+          <Logo src="./public/img/bg-home.svg" />
+        </a>
 
         <MenuButton onClick={handleMenuToggle}>
           <svg
@@ -117,12 +102,8 @@ const Navbar = () => {
 
         <Links>
           <List isOpen={isOpen}>
-            <a class="nav-link" href="./#inicio">
-              <ListItem>Início</ListItem>
-            </a>
-
             <a class="nav-link" href="./#sobre">
-              <ListItem>Sobre</ListItem>
+              <ListItem>Sobre Nós</ListItem>
             </a>
 
             <a class="nav-link" href="./#trabalhos">
@@ -134,7 +115,7 @@ const Navbar = () => {
           </List>
         </Links>
 
-        <Social>
+        {/* <Social>
           <ListSocial class="nav-link">
             <a href="mailto:studioantropoceno@gmail.com" target={"_blank"}>
               <svg
@@ -195,7 +176,7 @@ const Navbar = () => {
               </svg>
             </a>
           </ListSocial>
-        </Social>
+        </Social> */}
       </Container>
     </Section>
   );

@@ -2,10 +2,13 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "../../components/Navbar";
 import Sobre from "../Sobre/Sobre"
-const Section = styled.div``;
+import "../Home/Home.css"
+
+const Section = styled.div`
+`;
 
 const Container = styled.div`
-  margin-top: 150px;
+
 
   color: #000000;
 `;
@@ -88,48 +91,43 @@ const PhotoProtection = styled.div`
 `;
 
 const Intro = styled.div`
-  height: 100px;
-
-  align-items: center;
+background-image: url('./public/img/bg-home.png');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+ display: flex;
+ padding: 50px;
+  align-items: start;
   text-align: center;
-  justify-content: center;
+justify-content: end;
+  flex-direction: column;
+  
 
-  gap: 20px;
+  
 
-  h1 {
-    font-size: 2.7rem;
 
-    text-align: center;
-
-    font-weight: 300;
-    font-style: normal;
-
-    color: #000000 !important;
-    line-height: 40px;
-
-    @font-face {
-      font-family: "Raleway Thin";
-      font-style: normal;
-      font-weight: normal;
-      src: local("Raleway Thin"), url("Raleway Thin.woff") format("woff");
-    }
-
-    @media only screen and (max-width: 768px) {
-      font-size: 40px;
-    }
-  }
 
   p {
-    margin-top: 25px;
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    margin-bottom: 50px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 100;
     font-style: normal;
-    font-size: 25px;
-    color: #000000 !important;
-    line-height: 40px;
-    font-weight: bold;
+    font-size: 45px;
+    color: #d1c4c0 !important;
+
+   
     @media only screen and (max-width: 768px) {
       font-size: 11px;
     }
   }
+`;
+
+
+const Logo = styled.img`
+  height: 70px;
+
+  cursor: pointer;
 `;
 
 const Home = () => {
@@ -138,8 +136,8 @@ const Home = () => {
 
       <Container>
         <Intro>
-          <h1>Representação arquitetônica por Bruno Mota</h1>
-          <p>Render | Isométricas | Diagramas | Representação</p>
+        <Logo src="./public/img/bg-home.svg" />
+          <p>visualização arquitetônica</p>
         </Intro>
 
         <Work>

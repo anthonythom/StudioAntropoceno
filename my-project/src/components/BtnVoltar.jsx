@@ -16,9 +16,9 @@ height: 100px;
 const BtnVoltar = () => {
   return (
     <Button class="back-to-top" data-hover-hint="backToTop">
-      <a class="nav-link" href="./trabalhos">
+      <a class="nav-link" href="./#inicio">
         <span class="arrow">&uarr;</span>
-        <span class="preserve-whitespace"> Voltar</span>
+        <span class="preserve-whitespace">Voltar</span>
       </a>
     </Button>
   );
