@@ -8,6 +8,7 @@ import Navbar from "./components/Navbar";
 import Rodape from "./components/Rodape";
 import Trabalhos from "./pages/Trabalhos/Trabalhos";
 import BtnVoltar from "./components/BtnVoltar"
+import Chatbot from "./components/Chatbot/Chatbot";
 
 const Container = styled.div`
   height: 100vh;
@@ -32,6 +33,7 @@ function App() {
       <Sobre id="sobre" />
       <Trabalhos id="trabalhos"/>
       <Contato id="contato"/>
+      
       <Rodape />
       <BtnVoltar/>
     </Container>

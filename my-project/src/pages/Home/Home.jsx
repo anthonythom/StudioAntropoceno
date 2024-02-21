@@ -1,15 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
-import Navbar from "../../components/Navbar";
-import Sobre from "../Sobre/Sobre"
-import "../Home/Home.css"
-
-const Section = styled.div`
-`;
+import "../Home/Home.css";
+import Chatbot from "../../components/Chatbot/Chatbot";
+const Section = styled.div``;
 
 const Container = styled.div`
-
-
   color: #000000;
 `;
 
@@ -91,24 +86,19 @@ const PhotoProtection = styled.div`
 `;
 
 const Intro = styled.div`
-background-image: url('./img/bg-home.png');
+  background-image: url("./img/bg-home.png");
   background-size: cover;
   height: 100vh;
   width: 100vw;
- display: flex;
- padding: 50px;
+  display: flex;
+  padding: 50px;
   align-items: start;
   text-align: center;
-justify-content: end;
+  justify-content: end;
   flex-direction: column;
-  
-
-  
-
-
 
   p {
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
     margin-bottom: 50px;
     font-family: "Poppins", sans-serif;
     font-weight: 100;
@@ -116,13 +106,11 @@ justify-content: end;
     font-size: 45px;
     color: #d1c4c0 !important;
 
-   
     @media only screen and (max-width: 768px) {
       font-size: 11px;
     }
   }
 `;
-
 
 const Logo = styled.img`
   height: 70px;
@@ -130,16 +118,46 @@ const Logo = styled.img`
   cursor: pointer;
 `;
 
+const FloatingButton = styled.button`
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #705d3f;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 1000;
+
+  &:hover {
+    background-color: #705d3f;
+  }
+`;
+
+
 const Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleChatButtonClick = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <Section id="inicio" className="header_link">
-
+     
       <Container>
+        
         <Intro>
-        <Logo src="./img/bg-home.svg"/>
+          <Logo src="./img/bg-home.svg" />
           <p>visualização arquitetônica</p>
         </Intro>
-
+        <FloatingButton onClick={handleChatButtonClick}>Chat Duni</FloatingButton>
+      <Chatbot isOpen={isOpen} handleChatButtonClick={handleChatButtonClick} />
         <Work>
           <Container1>
             <div className="fileira1">
@@ -191,20 +209,15 @@ const Home = () => {
               <PhotoOverlay></PhotoOverlay>
               <PhotoProtection></PhotoProtection>
             </PhotoContainer>
+            
           </div>
         </Work>
-        
       </Container>
-
 
       <Container>
-
      
-
       </Container>
-      
     </Section>
-    
   );
 };
 
